@@ -11,7 +11,7 @@ const Products = () => {
 
     const fetchProducts = async () => {
         try {
-            const res = await fetch("http://localhost:9000/products")
+            const res = await fetch("https://e-cart-ggx6.onrender.com/products")
             const data = await res.json()
             // fallback to [] so .map never sees undefined
             setProducts(Array.isArray(data.products) ? data.products : [])
