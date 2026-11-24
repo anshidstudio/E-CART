@@ -15,26 +15,7 @@ dns.setServers(["8.8.8.8"])
 
 // to convert json data to original form
 app.use(express.json())
-app.use(cors({
-    origin: (origin, callback) => {
-
-        // Allow local development and your production domain
-        const isVercelPreview =
-            origin &&
-            /^https:\/\/e-cart-[a-z0-9-]+-anshidstudio\.vercel\.app$/.test(origin);
-
-        if (
-            !origin ||
-            allowedOrigins.includes(origin) ||
-            isVercelPreview
-        ) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
-    credentials: true
-}));
+app.use(cors({ origin: "https://e-cart-ten-gamma.vercel.app/", credentials:true }))
 // app.use(cors({ origin: "http://localhost:5173", credentials:true }))
 
 // to access cookies
