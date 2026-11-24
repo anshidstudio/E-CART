@@ -13,7 +13,7 @@ const Products = () => {
 
     const fetchProducts = async () => {
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/products`)
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/products`,{method: "GET" , credentials:"include"})
             const data = await res.json()
             if (data.success && data.products) {
                 setProducts(data.products)
