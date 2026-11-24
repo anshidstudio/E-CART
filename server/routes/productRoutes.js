@@ -5,7 +5,7 @@ import authenticate from "../middleware/authMiddleware.js"
 
 const router = express.Router()
 
-router.post("/products", authenticate, addProduct);
+router.post("/products", authenticate , addProduct);
 router.get("/products", getAllProducts)
 
 
